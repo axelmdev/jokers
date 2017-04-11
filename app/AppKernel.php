@@ -2,6 +2,7 @@
 
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Kerlann\BackOfficeBundle\KerlannBackOfficeBundle;
 
 class AppKernel extends Kernel
 {
@@ -15,7 +16,20 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new AppBundle\AppBundle(),
+        	/** Sonata Bundle **/
+        	new Sonata\CoreBundle\SonataCoreBundle(),
+        	new Sonata\BlockBundle\SonataBlockBundle(),
+        	new Sonata\UserBundle\SonataUserBundle(),
+        	new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+        	new FOS\UserBundle\FOSUserBundle(),
+        	new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+        	new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+        	new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+        	new Sonata\AdminBundle\SonataAdminBundle(),
+        	//new Sonata\MediaBundle\SonataMediaBundle(),
+        	/** Front & Back **/
+            new Kerlann\FrontOfficeBundle\KerlannFrontOfficeBundle(),
+            new Kerlann\BackOfficeBundle\KerlannBackOfficeBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

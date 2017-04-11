@@ -1,0 +1,13 @@
+{% extends '::layout.html.twig' %}
+{% block content %}
+    <h2>Livraison Intermarché</h2>
+    <object data="{{ asset('bundles/jokers/pdf/service_de_livraison_de_courses_pour_les_usagers_de_ker_lann.pdf') }}" type="application/pdf" width="100%" height="100%">
+        <p>Télécharger :
+            <a href="{{ asset('bundles/jokers/pdf/service_de_livraison_de_courses_pour_les_usagers_de_ker_lann.pdf') }}"> Télécharger le pdf :
+                service_de_livraison_de_courses_pour_les_usagers_de_ker_lann.pdf
+            </a>
+        </p>
+    </object>
+    <br>
+    <a href="">Aller sur le site de livraison intermarché</a>
+{% endblock %}

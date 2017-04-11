@@ -1,0 +1,13 @@
+# src/Kerlann/BackOfficeBundle/Resources/config/admin.yml
+
+services:
+    app.admin.event:
+        class: Kerlann\BackOfficeBundle\Admin\EventAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Modules", label: "Event" }
+        arguments:
+            - ~
+            - Kerlann\FrontOfficeBundle\Entity\Event
+            - ~
+        calls:
+            - [ setTranslationDomain, [KerlannBackOfficeBundle]]

@@ -1,0 +1,39 @@
+{% extends '::layout.html.twig' %}
+{% block content %}
+    <div class="owl-carousel owl-theme">
+        {% for event in events %}
+            <div class="items events">
+                <div class="event_header">
+                    <div class="event-img">
+                        <img src="{{ asset('bundles/jokers/img/event_default.jpg') }}" alt="event">
+                    </div>
+                    <h2 class="event-title">{{ event.name }} <button class="pull-right btn btn-success">S'inscrire</button>&nbsp;</h2>
+                </div>
+                <div class="event_content">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <!-- Liste groupes de personnes -->
+                            <ul class="list-group">
+                                <li class="list-group-item"><label> Axel Mainguy</label></li>
+                                <li class="list-group-item"><label> Axel Mainguy</label></li>
+                                <li class="list-group-item"><label> Axel Mainguy</label></li>
+                                <li class="list-group-item"><label> Axel Mainguy</label></li>
+                                <li class="list-group-item"><label> Axel Mainguy</label></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-8">
+                            <!-- Description de l'evenement -->
+                            <h4>Description/Animations :</h4>
+                            <p>{{ event.description }}</p>
+                            <hr>
+                            <h4>Adresse :</h4>
+                            <!-- Google map et adresse de l'evenement -->
+                            <p>X rue du X 35000 Kerlann</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}
